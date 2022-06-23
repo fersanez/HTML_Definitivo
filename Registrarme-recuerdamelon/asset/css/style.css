@@ -116,10 +116,18 @@ a,
     display: inline-block;
     margin-top: 20px;
 }
+.password-olvidada a:hover {
+    cursor: pointer;
+    color: var(--verdeGris);
+}
 
 .reguistro-usuario a {
     display: inline-block;
     margin-top: 20px;
+}
+.reguistro-usuario a:hover {
+    cursor: pointer;
+    color: var(--verdeGris);
 }
 
 .input input {
@@ -144,7 +152,7 @@ a,
 
 .input button[type="submit"]:hover {
     cursor: pointer;
-    color: var(--verde);
+    color: var(--verdeGris);
     background-color: var(--blanco);
 }
 
@@ -169,7 +177,7 @@ a,
 .bt-switchLog:hover
 {
     cursor: pointer;
-    color: var(--verde);
+    color: var(--verdeGris);
     background-color: var(--blanco);
 }
 
