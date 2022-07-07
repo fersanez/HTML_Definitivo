@@ -245,6 +245,8 @@ a,
         width: 100%;
         margin-right: 0;
     }
+    
+    /*search field*/
         .navbar .search-container button {
         float: right;
         padding: 6px 10px;
