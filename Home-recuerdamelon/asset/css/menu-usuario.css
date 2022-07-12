@@ -28,11 +28,80 @@
 }
 
 
+/*------------ SEARCH TASK ----------------*/
+.dropbtn {
+    background-color: var(--verdeGris);
+    color: white;
+    padding-inline: 16px;
+    padding-block: 10px;
+    
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .dropbtn:hover{
+    background-color: var(--amarilloMel);
+    color: var(--blanco)
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    
+    background-image: url('../img/icons/search-iconG.svg');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid var(--blanco);}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--blanco);
+    min-width: 230px;
+    width: 15%;
+    overflow: auto;
+    border: 1px solid var(--verdeGris);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--verdeGris);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  .dropdown-content a:hover {color: var(--amarilloMel);} 
+  .show {display: block;}
+
 
 /*------------ CONTROL TASK ----------------*/
-.follow img {
+.follow{
+    top: 0%;
     width: 60%;
+
 }
+
+.follow img {
+    width: 50%;
+}
+
 .follow,
 .share {
     display: inline-block;
@@ -46,12 +115,12 @@
 .follow:hover .label,
 .share:hover .label {
     opacity: 0;
-    transition: opacity 0.5s 0.125s ease-out;
+    transition: opacity 0.2s 0.1s ease-out;
 }
 
 .follow:hover .icon,
 .share:hover .icon {
-    border-radius: 1em;
+    border-radius: 5em;
     margin: 0 0;
 }
 
