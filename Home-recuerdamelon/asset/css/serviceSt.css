@@ -414,3 +414,21 @@ html, .tasks.body {
 #label-5:checked ~ label[for=label-5]:before{
   background: url("/asset/img/icons/ok-iconW.svg") no-repeat center center;
 }
+
+.container-usuario {
+    background: #c0e242;
+    width: auto;
+    border-radius: 15px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    transition: all 0.7s ease;
+    position: relative;
+    padding: 10px 50px;
+    margin: 80px auto;
+}
+
+.tabla-usuario {
+    position: relative;
+    margin: auto;
+}
