@@ -432,3 +432,20 @@ html, .tasks.body {
     position: relative;
     margin: auto;
 }
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+
+  .my-picture {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    border: 2px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
