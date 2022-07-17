@@ -1,194 +1,464 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
+    --verde: #6BF178;
+    --verdeOscuro: #288E4C;
+    --verdeGris: #88ad58;
+    --amarilloMel: #EBC247;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --fuente: 'Quicksand', sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuerda melon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./asset/img/logo.ico" />
+/*------- NAV INFERIOR DESPLEGABLE: Contacto, info, ... ----------*/
 
-    <link rel="stylesheet" href="./asset/css/normalize.css">
-    <link rel="stylesheet" href="./asset/css/serviceSt.css">
-    <link rel="stylesheet" href="asset/css/menu-usuario.css"/>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.css"></script>
-
-    
-
-    <link rel="icon" type="image/ico" href="./asset/img/favicon.ico" />
-    <script src="./asset/javascript/javascript.js"></script>
-</head>
-
-<body>
-    <main>
-        <div class="container-bg"> 
-            <!-- MENU -->
-            <div class="navbar">  
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link-current" href="home.html">MyTasks</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link"  href="conocenos.html">Conocenos</a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactos.html">Contactos</a>
-                    </li>
-                <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="registro.html">Registrarme</a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Identificarme</a>
-                    </li>
-                -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#">Meloner</a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.html">Perfil</a></li>
-                        <li><a class="dropdown-item" href="index.html">Configuración</a></li>
-                        <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
-                        </ul>
-                    </li>
-                <!--                 
-                    <li class="nav-item">
-                        <a class="nav-link disabled" class="cursor-na" href="#">Extras</a>
-                    </li>
-                -->
-                </ul>          
-            </div> 
-             
-
-            <!-- USER BUTTON -->
-            <div class="container-controls">
-
-                <!-- ESTADO DE REGISTROS -->
-                <div class="container-state" >
-                    <li id = "stateli">TAREAS REGISTRADAS / AÚN NO HAY TAREAS</li>
-                </div>
-
-                <!-- SEARCH TASK -->
-                <div class="dropdown-filt">
-                    <button onclick="myFunction()" class="dropbtn">FILTER</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                        <a href="#Work">Work</a>
-                        <a href="#Sport">Sport</a>
-                        <a href="#Fun">Fun</a>
-                        <a href="#Personal">Personal</a>
-                        <a href="#ToLearn">ToLearn</a>
-                        <a href="#Pep">Pep</a>
-                        <a href="#JGarcia">JGarcia</a>
-                        <a href="#Bflores">Bflores</a>
-                        <a href="#JCarras">JCarras</a>
-                        <a href="#NuevoMeloner con el que compartie una tarea">NuevoMeloner con el que compartie una tarea</a>
-                    </div>
-                </div>
-
-                <!-- BUTTON TASK -->
-                <div class="follow">
-                    <div class="icon first"><img src="./asset/img/icons/plus-iconsW.svg" alt="Crear Tarea"></div>
-                    <div class="icon"><img src="./asset/img/icons/trash-iconW.svg" alt="Eliminar tarea"></div>
-                    <div class="icon"><img src="./asset/img/icons/mark-iconsW.svg" alt="Seleccionar todo"></div>       
-                    <div class="icon last"><img src="./asset/img/icons/share_iconW.svg" alt="Compartir Tarea"></div>
-                    <div class="label">
-                        tasks
-                        <!-- <img src="./asset/img/menu-lateral/help_icon.svg" alt="Usuario"> -->
-                    </div>
-                </div>
-                
-            </div>
-
-            <!-- LOGO -->
-            <div class="logo">
-                <img src="./asset/img/Logo_blanco.png" alt="Imagen"> 
-            </div>
-
-        </div>
-
-        <!--------  Ejemplo interfaz web de manejo de tareas  -------> 
-        <div class="container-tasks">  
-
-            <!-- TASK REG -->
-            <div class="tasks">
-
-                <!-- task 1 -->
-                <input id='label-1' type='checkbox' checked/>
-                <label for='label-1'>
-
-                    <div class="typetask"> </div>
-
-                    <h2>
-                        <div class="task-tittle">  
-                            <img src="./asset/img/icons/working.png" alt="Imagen"> 
-                            Working jarrld at the morning  -  Fin: 01/06/2022 
-                        </div> 
-                        <div class="task-controls">   
-                        <!--    <img src="./asset/img/icons/edit-iconW.svg" alt="Imagen"> -->
-                            <button type="button" class="btn-edit" id="btEdit1">
-                                <span>.</span>
-                            </button>
-                            <button type="button" class="btn-select" id="btSelect1">
-                                <span>Select</span>
-                            </button>                                
-
-                            <!--  SELECT BUTTON -->
-                        <!--    
-                            <input class="btn-check" type="radio" value="" id="select-1">
-                            <label class="btn btn-primary" for="select-1">select</label>
-                        -->
-                        </div> 
-                        <span>oatmeal, fruits &amp; morning tea \n 
-                            esto son cosas que se "\n" 
-                            ponen en una lista
-                            asdasfasdf asdfasdf asdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdf 
-                            asdasfasdf asdfasdf asdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdf 
-                            asdasfasdf asdfasdf asdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdf 
-                            asdasfasdf asdfasdf asdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdf 
-                            asdasfasdf asdfasdf asdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdfasdasfasdf asdfasdf 
-                        </span>
-                    </h2>   
-                </label>
-
-                <!-- task 2 -->
-                <input id='label-2' type='checkbox' checked/>
-                <label for='label-2'>
-                    <h2> 
-                        <div class="task-tittle">  
-                            <img src="./asset/img/icons/working.png" alt="Imagen"> 
-                            e-mail processing  -  Fin: 33/07/2022 
-                        </div> 
-                        <div class="task-controls">   
-                            <button type="button" class="btn-edit" id="btEdit1">
-                                <span>.</span>
-                            </button>
-                            <button type="button" class="btn-select" id="btSelect1">
-                                <span>Select</span>
-                            </button> 
-                        </div> 
-
-                        <span>art &amp; code, personal</span>
-                    </h2>   
-                </label>
-            
-            </div>
-        </div>
-
-         
+.navbar 
+{
+    display: absolute;
+    height: 4em;
+    background: var(--verdeGris);
+    align-items: center;
+    padding: 0;
+    gap: lem;
+    font-size: 150%;
+    list-style: none;
         
+}
 
-    </main>
-</body>
+.navbar li
+{
+    padding: 0px 15px;
+}
 
-</html>
+.navbar a{
+    display: inline;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.navbar a:hover
+{
+    color: var(--amarilloMel);
+    transition: .2s;
+}
+
+
+.nav-link-current{
+    color: var(--blanco);
+    background-color: var(--verdeGris);
+    padding: 5%;
+    padding-inline: 10%; 
+    border-width: thick; 
+    border-radius: 5%;
+    border: solid var(--blanco);
+}
+.nav-link-current:hover{
+    
+    border: solid var(--amarilloMel);
+}
+
+.navusr-info{
+    display: grid;    
+    grid-template-columns: 30% 30% 30%;
+    font-size: 80%;
+}
+
+
+.dropdown-menu
+{
+    background: var(--verdeGris); 
+    border-color: var(--blanco);    
+    color: var(--blanco);
+}
+
+.dropdown-menu a
+{
+    color: var(--verdeGris);
+}
+
+.dropdown-menu a:hover
+{
+    padding: auto;
+    color: var(--blanco);
+    background-color: var(--verdeGris);
+    border-radius: 15px;
+
+}
+
+/* -- LOGO NAVBAR --- */
+.logo{
+    position: absolute;
+    left: 90%;
+    top: 0%;
+    width: 10%;
+}
+
+.logo img{
+    width: 95%;
+}
+
+.container-bg{
+
+    height: 30%;
+    width: 100%;
+    background-color: var(--verdeOscuro);
+    
+    display: inline-block;
+}
+/* --- CONTAINER DE TASKS STATE -----*/
+.container-state
+{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    height: 5%;
+    width: 5% auto;
+    left: 0%;
+    
+    font-size: 200%;
+    color:  var(--verdeGris);
+}
+
+.container-state li
+{
+    list-style: none;
+    margin-top: 1%;
+}
+ 
+/* --- CONTAINER CONTROL USR (crear/eliminar/compartir) -----*/
+.container-controls
+{
+    position: absolute;    
+    display: grid;
+    grid-template-columns: 50% 10% 20%;
+    justify-content: right;
+
+    left: 0%;
+    background-color: var(--blanco);
+    color: var(--blanco);
+    height: 5%;
+    width: 95%;
+    padding-top: 1%;
+}
+
+/*BUTTON CON SEARCH-DROPDOWN*/
+.search-container button {
+    position: absolute; 
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .search-container button:hover {
+    background: #ccc;
+  }
+  @media screen and (max-width: 600px) {
+    .search-container {
+      float: none;
+    }
+    .navbar .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .navbar input[type=text] {
+      border: 1px solid #ccc;  
+    }
+}
+
+/* ----------- CONTAINER TASKS ------------*/
+
+.container-tasks
+{
+    position: relative;
+    display: block;
+    padding-top: 50em;
+    padding-left: 50em;
+    margin: 0;
+    top: 5vh;
+    width: 100%;
+    height: 85%;
+     
+    align-items: left;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.container-tasks h1
+{
+    display: block;
+    position: inherit;
+    color: var(--blanco);
+    padding: 5vh;
+    left: 0;
+    align-items: center;
+}
+
+
+.container-tasks h3
+{
+    display: block;
+    color: var(--blanco);
+    top: 5%;
+    left: 5%;
+    padding: 3vh;
+    align-items: center;
+}
+
+/*---------  TASK -------------*/
+
+.task-tittle{
+    position: relative;
+    display: inline-block;
+    width: 85%;
+}
+.task-tittle img{
+    width: 6%;
+    padding-inline: 1%;
+}
+
+
+.task-controls{
+    position: absolute;
+    display: inline-block;
+    
+    text-align: center;
+    width: 13%;
+}
+
+/* --- BUTTON-EDIT ---*/
+.task-controls img{
+    width: 80%;
+}
+.btn-edit img{
+    
+    padding-inline: 5%;
+}
+
+.btn-edit{
+    background: url("/asset/img/icons/edit-iconW.svg") no-repeat center center;
+    background-color: var(--amarilloMel);
+    color: var(--blanco);
+    
+    text-align: center;
+    border-radius: 10%;
+    width: 30%;
+    
+    
+}
+
+.btn-edit:hover span {
+    display:none
+}
+
+.btn-edit:hover{
+    background: none;
+    background-color: var(--blanco);    
+    border-color: var(--amarilloMel);
+    border-width: 20%;
+
+    font-weight: bold;
+    font-size: small;
+    color: var(--amarilloMel);
+    
+    
+}
+
+.btn-edit:hover:before{
+    content: "edit";
+    
+}
+
+
+/* --- BUTTON-SELECT ---*/
+.btn-select{
+    color: var(--blanco);
+    background-color: var(--amarilloMel);
+    border-radius: 10%;
+    width: 50%;
+    
+}
+
+.btn-select:hover span {
+    display:none
+}
+
+.btn-select:hover{
+    background-color: var(--blanco);    
+    border-color: var(--amarilloMel);
+    
+    color: var(--amarilloMel);
+    font-weight: bold;
+    font-size: small;
+}
+
+.btn-select:hover:before{
+    content: "selected";
+    
+}
+
+
+/*----------------------TASK CLASS ----------*/
+/* tiny reset */
+html, .tasks.body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+.tasks{
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 405px;    
+    top: 10%;
+    left: -70vw; 
+    right: 0px;
+    padding: 20px;
+    margin: 10px auto; 
+      
+}
+
+/*
+.tasks body{
+    background: var(--verdeGris);
+    font-family: sans-serif;
+    
+    padding: 20px;
+  }
+*/
+
+.tasks input[type=checkbox] {
+    display: none;
+  }
+
+.tasks label{
+
+    background: #89b4ec;
+    height: 10% auto;
+    width: 100em;
+    display: block;
+    border-bottom: 3px solid #56749c;
+    border-radius: 15px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-indent: 20px;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    position: relative;
+    padding: 10px 50px;
+    margin: 20px auto; 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    
+}
+
+
+
+.tasks h2
+{
+    
+    font-size: 20px;
+}
+
+.tasks label h2 span{
+    
+    display: block;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: var(--blanco);
+    font-size: 15px;
+    padding: 1%;
+    
+}
+
+.tasks label:before{
+    content:"";
+    width: 20px;
+    height: 20px;
+    background:  var(--blanco);
+    border-bottom: 2px solid #56749c;
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    left: 20px;
+    top: 10%;
+    transition: border 0.7s ease
+}
+
+
+
+
+#label-1:checked ~ label[for=label-1],
+#label-2:checked ~ label[for=label-2],
+#label-3:checked ~ label[for=label-3],
+#label-4:checked ~ label[for=label-4],
+#label-5:checked ~ label[for=label-5]{
+  background: #56749c;
+  border-bottom: 3px solid #435975;
+  text-decoration:line-through;
+
+}
+#label-1:checked ~ label[for=label-1] h2 span,
+#label-2:checked ~ label[for=label-2] h2 span,
+#label-3:checked ~ label[for=label-3] h2 span,
+#label-4:checked ~ label[for=label-4] h2 span,
+#label-5:checked ~ label[for=label-5] h2 span{
+
+    color: var(--blanco);
+}
+
+#label-1:checked ~ label[for=label-1]:before,
+#label-2:checked ~ label[for=label-2]:before,
+#label-3:checked ~ label[for=label-3]:before,
+#label-4:checked ~ label[for=label-4]:before,
+#label-5:checked ~ label[for=label-5]:before{
+  background: url("/asset/img/icons/ok-iconW.svg") no-repeat center center;
+}
+
+.container-usuario {
+    background: #c0e242;
+    width: auto;
+    border-radius: 15px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    transition: all 0.7s ease;
+    position: relative;
+    padding: 10px 50px;
+    margin: 80px auto;
+}
+
+.tabla-usuario {
+    position: relative;
+    margin: auto;
+}
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+
+  .my-picture {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    border: 2px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
