@@ -110,6 +110,74 @@
                 
             </div>
 
+            
+            <!-------------------------------------------------- POPUP CREAR TAREAS -->
+            <div class="popup-newTask" id="formNewTask">
+                
+                <form class="form-newTask">
+                    <button type="button" class="clear-btn" onclick=clearNewTask()></button>
+                    <button type="button" class="accept-btn" onclick=acceptNewTask()></button>
+                    <button type="button" class="cancel-btn" onclick=cancelNewTask()></button>
+
+                    <h2>Crea una nueva tarea</h2>
+                    <div class="form-textTask" >
+                        <label>Titulo (<span id="cont-span">0</span>/60)</label>
+                        <input id="tittle-task" placeholder="" type="text" maxlength="60" required onclick="contchar()">
+
+                        <label for="description-task">Descripcion</label>
+                        <textarea id="description-task" maxlength="150"></textarea>
+
+                    </div>
+                    <div class="form-dateTask">
+                        <label>Comienza el </label> <input class="" type="datetime-local" name="date-time" id="dateTask-ini">
+                        <label>y termina el </label> <input class="" type="datetime-local" name="date-time" id="dateTask-fin">
+                    </div>     
+
+                    <div class="form-categoryTask" action="#">
+                        <label for="catTask">Seleccionar categoría: </label>
+                        <input type="text" id="catTask" name="catTask" list="categoryTask">
+
+                        <datalist id="categoryTask">
+                            <option value="Default"></option>
+                            <option value="Work"></option>
+                            <option value="Personal"></option>
+                            <option value="EOIjava"></option>
+                            <option value="Sport"></option>
+                        </datalist>
+                        <button type="button" class="selectCat-btn" onclick=AceptCat()> aceptar</button>
+                    </div> 
+                    
+                    <div class="form-shareTask">
+                        <label for="shareTask">Añadir usuarios con los que compartir la tarea: </label>
+                        <input type="text" id="shareTask" name="shareTask" list="contactToTask">
+
+                        <datalist id="contactToTask">
+                            <option value="JGarcia"></option>
+                            <option value="Bflores"></option>
+                            <option value="JCarras"></option>
+                            <option value="EOIjava"></option>
+                            <option value="Pep"></option>
+                        </datalist>
+                        <button type="button" class="selectCat-btn" onclick=AceptCat()> compartir</button>
+
+                        <!-- SHOW SHARED -->
+                        <!-- <div class="form-showShared"> -->
+                        <button  type="button" class="dropshare-btn" id="show-contshared" onclick="myShared()"><span>[3]</span></button>
+                        <div id="myContacts" class="dropdown-shareTask">
+                            <!-- Podríamos evitar borrar compartir desde aqui....????????????????????? -->
+                            <li name="list" value="JGarcia">JGarcia <button></button></li>
+                            <li name="list" value="Bflores">Bflores <button></button></li>
+                            <li name="list" value="JCarras">JCarras <button onclick="deletShareTask()"></button></li>
+                            <li name="list" value="JGarcia">JGarcia <button></button></li>
+                            <li name="list" value="Bflores">Bflores <button></button></li>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </form>
+            </div> 
+            <!----------------------------------------------------------------- POPUP NEWTASK -->
+            
+            
             <!-- LOGO -->
             <div class="logo">
                 <img src="./asset/img/Logo_blanco.png" alt="Imagen"> 
